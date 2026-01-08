@@ -1,0 +1,43 @@
+{
+  "name": "React Frontend (Alpine + Node 20)",
+  "image": "mcr.microsoft.com/devcontainers/base:alpine-3.20",
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20",
+      "packageManager": "npm"
+    }
+  },
+
+  "forwardPorts": [5173],
+
+  "portsAttributes": {
+    "5173": {
+      "label": "Vite Dev Server",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "mounts": [
+    "source=${localEnv:HOME}/.npm,target=/home/vscode/.npm,type=bind"
+  ],
+
+  "postCreateCommand": "npm install",
+
+  "postStartCommand": "npm run dev -- --host",
+
+  "remoteUser": "vscode",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "dsznajder.es7-react-js-snippets",
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.auto-rename-tag",
+        "christian-kohler.npm-intellisense"
+      ]
+    }
+  }
+}
