@@ -1,6 +1,6 @@
 {
   "name": "React Dev (Node 20 Alpine - Win11)",
-  "image": "mcr.microsoft.com/devcontainers/node:20-alpine",
+  "image": "mcr.microsoft.com/devcontainers/node:20-alpine3.19",
 
   "forwardPorts": [5173],
 
