@@ -1,13 +1,6 @@
 {
-  "name": "React Frontend (Alpine + Node 20)",
-  "image": "mcr.microsoft.com/devcontainers/base:alpine-3.20",
-
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "20",
-      "packageManager": "npm"
-    }
-  },
+  "name": "React Dev (Node 20 Alpine - Win11)",
+  "image": "mcr.microsoft.com/devcontainers/node:20-alpine",
 
   "forwardPorts": [5173],
 
@@ -18,15 +11,9 @@
     }
   },
 
-  "mounts": [
-    "source=${localEnv:HOME}/.npm,target=/home/vscode/.npm,type=bind"
-  ],
-
   "postCreateCommand": "npm install",
 
-  "postStartCommand": "npm run dev -- --host",
-
-  "remoteUser": "vscode",
+  "postStartCommand": "npm run dev -- --host 0.0.0.0",
 
   "customizations": {
     "vscode": {
