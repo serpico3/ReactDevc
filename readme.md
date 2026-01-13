@@ -1,115 +1,16 @@
-🧩 React Frontend – Dev Container
+# React + Vite
 
-Questo progetto utilizza un Dev Container basato su Alpine Linux con Node.js 20 LTS per garantire un ambiente di sviluppo riproducibile, leggero e coerente per tutto il team.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Il dev server React viene avviato automaticamente all’apertura del container.
+Currently, two official plugins are available:
 
-📦 Stack
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-OS: Alpine Linux 3.20
+## React Compiler
 
-Runtime: Node.js 20 LTS
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Package Manager: npm
+## Expanding the ESLint configuration
 
-Framework Frontend: React (Vite consigliato)
-
-Editor: VS Code + Dev Containers
-
-🚀 Avvio rapido
-Prerequisiti
-
-Docker
-
-Visual Studio Code
-
-Estensione Dev Containers
-
-Avvio ambiente
-
-Clona il repository
-
-Apri il progetto in VS Code
-
-Seleziona “Reopen in Container”
-
-Il container verrà costruito automaticamente e:
-
-verranno installate le dipendenze (npm install)
-
-il dev server React partirà in automatico
-
-il browser si aprirà su http://localhost:5173
-
-🌐 Dev Server
-
-Porta: 5173
-
-Binding: 0.0.0.0
-
-Auto-open browser: sì
-
-Per Vite, assicurati che vite.config.js contenga:
-
-export default {
-  server: {
-    host: true,
-    port: 5173,
-    strictPort: true
-  }
-}
-
-🛠️ Lifecycle del Dev Container
-Fase	Comando
-Creazione container	npm install
-Avvio container	npm run dev -- --host
-
-postCreateCommand: installa le dipendenze una sola volta
-
-postStartCommand: avvia il dev server a ogni start
-
-🧠 Best Practices adottate
-✅ Sicurezza
-
-Container non root (vscode)
-
-Nessun servizio superfluo
-
-⚡ Performance
-
-Cache npm persistente (~/.npm)
-
-Alpine minimal
-
-🧑‍💻 Developer Experience
-
-Dev server auto-start
-
-Browser auto-open
-
-Estensioni VS Code preinstallate
-
-🧩 Estensioni VS Code incluse
-
-ESLint
-
-Prettier
-
-React / Redux Snippets
-
-Tailwind CSS IntelliSense
-
-Auto Rename Tag
-
-npm Intellisense
-
-Tutte le estensioni vengono installate automaticamente nel container.
-
-📁 Struttura progetto consigliata
-.
-├─ src/
-├─ public/
-├─ package.json
-├─ vite.config.js
-└─ .devcontainer/
-   └─ devcontainer.json
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
