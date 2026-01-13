@@ -1,20 +1,19 @@
 {
   "name": "React Dev (Node 20 Alpine - Win11)",
-  "image": "mcr.microsoft.com/devcontainers/node:20-alpine3.19",
-
+  "image": "node:20-alpine",
+  
   "forwardPorts": [5173],
-
+  
   "portsAttributes": {
     "5173": {
       "label": "Vite Dev Server",
       "onAutoForward": "openBrowser"
     }
   },
-
+  
   "postCreateCommand": "npm install",
-
   "postStartCommand": "npm run dev -- --host 0.0.0.0",
-
+  
   "customizations": {
     "vscode": {
       "extensions": [
