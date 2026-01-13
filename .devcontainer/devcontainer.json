@@ -1,6 +1,9 @@
 {
   "name": "React Dev (Node 20 Alpine - Win11)",
-  "image": "node:20-alpine",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
   
   "forwardPorts": [5173],
   
@@ -11,7 +14,7 @@
     }
   },
   
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "sh -c 'if [ ! -f package.json ]; then npm create vite@latest . -- --template react --default; else npm install; fi'",
   "postStartCommand": "npm run dev -- --host 0.0.0.0",
   
   "customizations": {
