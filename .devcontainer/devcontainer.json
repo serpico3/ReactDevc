@@ -4,13 +4,17 @@
     "dockerfile": "Dockerfile",
     "context": "."
   },
-  "runArgs": ["-p", "5173:5173"],
-  "forwardPorts": [5173],
+  "runArgs": ["-p", "5173:5173", "-p", "8080:8080"],
+  "forwardPorts": [5173, 8080],
   
   "portsAttributes": {
     "5173": {
       "label": "Vite Dev Server",
       "onAutoForward": "openBrowser"
+    },
+    "8080": {
+      "label": "App 8080",
+      "onAutoForward": "notify"
     }
   },
   
